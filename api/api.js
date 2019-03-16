@@ -14,7 +14,7 @@ app.post("/api/users", (req, res) => {
     id: users.length + 1,
     name: req.body.name
   };
-
+  //pushing the new user to the users array
   users.push(user);
   res.send(user);
 });
