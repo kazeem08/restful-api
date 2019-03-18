@@ -20,9 +20,16 @@ app.post("/api/users", (req, res) => {
 });
 
 //Updating an existing user
-app.put("/api/courses/:id", (req, res) => {
-  const user = users.find(eachUser.id === parseInt(req.param.id));
+app.put("/api/users/:id", (req, res) => {
+  const user = users.find(eachUser => eachUser.id === parseInt(req.params.id));
   user.name === req.body.name;
+  res.send(user);
+});
+
+//Delete a user
+app.delete("/api/users/:id", (req, res) => {
+  const user = users.find(eachUser => eachUser.id === parseInt(req.params.id));
+  users.splice(users.indexOf(user), 1);
   res.send(user);
 });
 
